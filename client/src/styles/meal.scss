@@ -80,14 +80,13 @@
           line-height: 42px;
           font-size: 24px;
           padding: 20px 0;
-
         }
         p {
           font-family: MyFont, cursive;
+          color: #fff;
           line-height: 36px;
           font-size: 22px;
           font-weight: bolder;
-
         }
         h2 {
           text-transform: uppercase;
@@ -95,7 +94,6 @@
           //   letter-spacing: -1px;
           font-family: "Bebas Neue", cursive;
           padding: 30px 0;
-
         }
         .similar-meals-wrapper {
           display: flex;
