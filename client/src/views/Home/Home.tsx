@@ -5,6 +5,7 @@ import nuts from "../../images/nuts.svg";
 import mealImg from "../../images/chicken-rice.jpg";
 
 import "../../styles/home.scss";
+import MealItem from "../../component/MealItem";
 
 export default function Home() {
   return (
@@ -39,13 +40,13 @@ export default function Home() {
       <section className="meals">
         <h3>Discover our tasty meals</h3>
         <div className="meal-wrapper">
-          <div className="meal-item">
-            {/* <div className="content">
-              <img src={mealImg} alt="chicken and rice" />
-            </div> */}
-            <div className="circle">Chicken & Rice</div>
-          </div>
+          <MealItem hover={true}/>
+          <MealItem hover={true}/>
+          <MealItem hover={true}/>
+          <MealItem hover={true}/>
         </div>
+        curious about our complete assortment?{" "}
+        <button>See all our products</button>
       </section>
       <section className="recipes">
         <h3>Discover our recipies</h3>

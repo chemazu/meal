@@ -3,6 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import Form from "./component/Form";
 import Home from "./views/Home/Home";
+import Recipe from "./views/Recipe";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { Router } from "express";
+import Meal from "./views/Meal";
 
 function App() {
   const questions = [
@@ -13,7 +17,10 @@ function App() {
   ];
   return (
     <div className="App">
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/meal/:id" element={<Meal />} />
+      </Routes>
     </div>
   );
 }

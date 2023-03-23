@@ -1,0 +1,116 @@
+@import "./font.scss";
+.meal-page {
+  display: flex;
+  padding: 5% 10%;
+  width: 100%;
+
+  box-sizing: border-box;
+  justify-content: space-between;
+  .left {
+    width: 42.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .ingredient-wrapper {
+      padding: 10%;
+      border-radius: 50px;
+      background-color: #5f1350;
+      color: #fffaed;
+      margin-top: 5%;
+      p {
+        font-family: MyFont, cursive;
+        line-height: 36px;
+        font-size: 22px;
+        font-weight: bolder;
+      }
+      .top {
+        display: flex;
+        padding-bottom: 2.5%;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+          text-transform: uppercase;
+          font-size: 36px;
+          //   letter-spacing: -1px;
+          font-family: "Bebas Neue", cursive;
+        }
+
+        border-bottom: 2px solid #fff;
+      }
+      .bottom {
+        padding: 5% 0;
+      }
+    }
+  }
+  .nutritional-info {
+    padding: 3% 0;
+    .top {
+      margin-bottom: 5%;
+    }
+  }
+  .nutrionalvalue {
+    display: flex;
+    width: 100%;
+    padding: 2% 0;
+    justify-content: space-between;
+    .value {
+      text-align: right;
+    }
+  }
+  .right {
+    width: 55%;
+    .meal-info {
+      width: 100%;
+      padding: 10%;
+      border-radius: 50px;
+      background-color: #5f1350;
+      box-sizing: border-box;
+      height: 70%;
+      color: #fff;
+      .top {
+        h1 {
+          font-family: "Bebas Neue", cursive;
+          font-size: 72px;
+        }
+        .sub {
+          font-family: "Bebas Neue", cursive;
+
+          text-transform: uppercase;
+          //   padding-bottom: 10px;
+          line-height: 42px;
+          font-size: 24px;
+          padding: 20px 0;
+
+        }
+        p {
+          font-family: MyFont, cursive;
+          line-height: 36px;
+          font-size: 22px;
+          font-weight: bolder;
+
+        }
+        h2 {
+          text-transform: uppercase;
+          font-size: 36px;
+          //   letter-spacing: -1px;
+          font-family: "Bebas Neue", cursive;
+          padding: 30px 0;
+
+        }
+        .similar-meals-wrapper {
+          display: flex;
+          padding: 0px 0;
+
+          .meal-item {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            .circle {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
