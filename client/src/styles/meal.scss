@@ -1,4 +1,9 @@
 @import "./font.scss";
+h2 {
+  text-transform: uppercase;
+  font-size: 36px;
+  font-family: "Bebas Neue", cursive;
+}
 .meal-page {
   display: flex;
   padding: 5% 10%;
@@ -65,8 +70,9 @@
       border-radius: 50px;
       background-color: #5f1350;
       box-sizing: border-box;
-      height: 70%;
-      color: #fff;
+      height: 65%;
+      color: #fffaed;
+
       .top {
         h1 {
           font-family: "Bebas Neue", cursive;
@@ -83,7 +89,7 @@
         }
         p {
           font-family: MyFont, cursive;
-          color: #fff;
+
           line-height: 36px;
           font-size: 22px;
           font-weight: bolder;
@@ -93,11 +99,11 @@
           font-size: 36px;
           //   letter-spacing: -1px;
           font-family: "Bebas Neue", cursive;
-          padding: 30px 0;
+          padding: 20px 0;
         }
         .similar-meals-wrapper {
           display: flex;
-          padding: 0px 0;
+          padding: 10px 0;
 
           .meal-item {
             width: 80px;
@@ -109,6 +115,247 @@
           }
         }
       }
+    }
+  }
+}
+.button-wrapper {
+  padding-top: 15px;
+  button {
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #5f1350;
+    background-color: #fffaed;
+    border: 0;
+    font-family: "Bebas Neue", cursive;
+    letter-spacing: 2px;
+    line-height: 36px;
+    font-size: 22px;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+}
+
+.recipe-section-wrapper {
+  padding: 2.5% 7.5%;
+  background-color: #702c63;
+  background-color: #5f1350;
+
+  color: #fffaed;
+
+  .top {
+    padding: 2.5% 0%;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 36px;
+      //   letter-spacing: -1px;
+      font-family: "Bebas Neue", cursive;
+      padding: 20px 0;
+    }
+  }
+  .recipe-section {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .recipe-holder {
+      padding-left: 10%;
+    }
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5% 0;
+    .button-wrapper {
+      display: flex;
+      padding: 0;
+      padding-left: 5%;
+      align-items: center;
+    }
+  }
+}
+.horizantal-right {
+  font-size: 190px;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  height: 190px;
+  width: 90px;
+  display: flex;
+  // align-self: flex-end;
+  justify-self: flex-end;
+  box-sizing: content-box;
+  position: relative;
+  font-family: "Bebas Neue", cursive;
+
+  //   top: 300px;
+  letter-spacing: 10px;
+  font-weight: 400;
+}
+// SUBSCRIBERS
+.sub-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 0;
+  img {
+    padding-bottom: 2.5%;
+  }
+  h2 {
+    padding-bottom: 2%;
+    font-size: 72px;
+  }
+  p {
+    width: 40%;
+    font-family: MyFont, cursive;
+    line-height: 36px;
+    font-size: 22px;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 2%;
+  }
+  form {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+
+    input {
+      border-radius: 10px;
+      border: 1px solid #5f1350;
+      padding: 5px 10px;
+      margin-right: 2%;
+      font-family: MyFont, cursive;
+      line-height: 32px;
+      font-size: 20px;
+    }
+    input[type="text"] {
+      width: 17.5%;
+    }
+    input[type="email"] {
+      width: 35%;
+    }
+    button {
+      border-radius: 10px;
+      padding: 10px 20px;
+      background-color: #5f1350;
+      color: #fffaed;
+      border: 0;
+      font-family: "Bebas Neue", cursive;
+      letter-spacing: 2px;
+      line-height: 36px;
+      font-size: 22px;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+  }
+}
+// footer
+.footer {
+  display: flex;
+  padding: 5% 10%;
+  background-color: #702c63;
+  justify-content: space-between;
+  .footer-area {
+    width: 30%;
+    box-sizing: border-box;
+    h2 {
+      font-size: 60px;
+      color: #fffaed;
+    }
+    p,
+    h4 {
+      font-family: MyFont, cursive;
+      line-height: 36px;
+      font-size: 22px;
+      font-weight: bolder;
+      padding-bottom: 2%;
+      color: #fffaed;
+    }
+    h4 {
+      font-weight: bolder;
+      text-transform: uppercase;
+      font-family: "Bebas Neue", cursive;
+      line-height: 48px;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+  }
+  .second,
+  .third {
+    padding-left: 10%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .meal-page {
+    display: block;
+    padding: 5%;
+    .left {
+      width: 100%;
+      .ingredient-wrapper .top {
+        p {
+          line-height: 18px;
+          font-size: 16px;
+        }
+      }
+      .meal-item {
+        width: 80vw;
+        height: 80vw;
+      }
+    }
+    .right {
+      width: 100%;
+      padding-top: 10%;
+    }
+  }
+  .recipe-section-wrapper {
+    .recipe-section .recipe-holder {
+      display: block;
+      padding: 0;
+      width: 100%;
+
+      .recipe-card {
+        width: 100%;
+      }
+    }
+    .bottom {
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        padding-bottom: 5%;
+      }
+    }
+  }
+  .horizantal-right {
+    display: none;
+  }
+  .sub-form {
+    text-align: center;
+    p {
+      width: 80%;
+    }
+    form {
+      align-items: center;
+      width: 90%;
+      flex-direction: column;
+      input[type="text"],
+      input[type="email"] {
+        width: 90%;
+        margin-bottom: 5%;
+      }
+    }
+  }
+  .footer {
+    flex-direction: column;
+    .footer-area {
+      width: 100%;
+      p{
+        font-size: 18px;
+      }
+    }
+    .second,.third{
+      padding: 0;
     }
   }
 }

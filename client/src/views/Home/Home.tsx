@@ -34,16 +34,16 @@ export default function Home() {
         </div>
       </header>
       <section className="how-it-works">
-        <h3>How it works</h3>
+        <h3>How it works GET A MEAL GET JACKED!!</h3>
         <div className="step-wrapper"></div>
       </section>
       <section className="meals">
         <h3>Discover our tasty meals</h3>
         <div className="meal-wrapper">
-          <MealItem hover={true}/>
-          <MealItem hover={true}/>
-          <MealItem hover={true}/>
-          <MealItem hover={true}/>
+          <MealItem hover={true} />
+          <MealItem hover={true} />
+          <MealItem hover={true} />
+          <MealItem hover={true} />
         </div>
         curious about our complete assortment?{" "}
         <button>See all our products</button>
