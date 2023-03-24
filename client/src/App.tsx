@@ -4,8 +4,7 @@ import "./App.css";
 import Form from "./component/Form";
 import Home from "./views/Home/Home";
 import Recipe from "./views/Recipe";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { Router } from "express";
+import { Route, Routes } from "react-router-dom";
 import Meal from "./views/Meal";
 
 function App() {
@@ -20,6 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/meal/:id" element={<Meal />} />
+
+        {/* <Route path="/">{<Home />} </Route>
+        <Route path="/meal/:id">{<Meal />}</Route> */}
       </Routes>
     </div>
   );
