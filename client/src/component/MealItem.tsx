@@ -17,7 +17,9 @@ export default function MealItem({ hover }: Props) {
           <button>More Info</button>
         </div>
       </div>
-      <div className="circle">Chicken & Rice</div>
+      <div className="circle">
+        <p>Chicken & Rice</p>
+      </div>
     </div>
   );
 }

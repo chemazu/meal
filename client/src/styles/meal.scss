@@ -299,6 +299,21 @@ h2 {
           font-size: 16px;
         }
       }
+      .circle {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 10px;
+        right: -10px;
+        p {
+          font-family: MyFont, cursive;
+
+          font-weight: bolder;
+        }
+      }
       .meal-item {
         width: 80vw;
         height: 80vw;
@@ -350,11 +365,12 @@ h2 {
     flex-direction: column;
     .footer-area {
       width: 100%;
-      p{
+      p {
         font-size: 18px;
       }
     }
-    .second,.third{
+    .second,
+    .third {
       padding: 0;
     }
   }
