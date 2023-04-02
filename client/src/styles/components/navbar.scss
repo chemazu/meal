@@ -1,0 +1,31 @@
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5% 10%;
+  align-items: center;
+  color: #000;
+  //   font-family: "Bebas Neue", cursive;
+  font-family: $firstfont;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  h2 {
+    font-size: 24px;
+    color: $site-primary-color-light;
+  }
+
+  ul {
+    display: flex;
+    // flex-grow: 1;
+    width: 60%;
+    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;
+    font-size: 24px;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  p {
+    font-size: 24px;
+  }
+}

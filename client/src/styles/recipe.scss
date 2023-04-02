@@ -1,0 +1,130 @@
+.recipe-page {
+  padding: 5% 10%;
+  h2 {
+    text-transform: uppercase;
+    font-size: 72px;
+    font-family: "Bebas Neue", cursive;
+  }
+
+  .recipe-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .sub-heading {
+      max-width: 60%;
+      font-family: MyFont, cursive;
+      line-height: 36px;
+      font-size: 24px;
+      text-align: center;
+      padding: 2% 0;
+    }
+    .tag-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 3% 0;
+      // padding-top: 10%;
+      // position: absolute;
+      // z-index: 40;
+      width: 60%;
+      p {
+        height: 2em;
+        margin-bottom: 10%;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        max-width: 200px;
+        color: #5f1350;
+        background-color: #fffaed;
+        border: 0;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 2px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        border-radius: 5px;
+        line-height: 36px;
+        font-size: 24px;
+      }
+    }
+
+    .time {
+      display: flex;
+      align-items: center;
+      font-family: MyFont, cursive;
+      line-height: 24px;
+      font-size: 18px;
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 10px;
+      }
+    }
+    .recipe-image {
+      background-image: url("../images/recipe-card-bg.jpg");
+      width: 90%;
+      height: 500px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+    }
+  }
+  .ingridients,
+  .directions {
+    padding: 2.5% 0;
+    h3{
+      font-family: MyFont, cursive;
+      line-height: 48px;
+      font-size: 36px;
+    }
+    li {
+      font-family: MyFont, cursive;
+      line-height: 36px;
+      font-size: 24px;
+      padding-bottom: 5px;
+    }
+    ul {
+      padding: 2.5% 0;
+
+    }
+  }
+  .nutritional-info-wrapper{
+
+    .nutrionalvalue{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .ingredient-wrapper {
+    padding: 5%;
+    border-radius: 50px;
+    background-color: $site-primary-color;
+    color: #fffaed;
+    margin-top: 5%;
+    width: 40%;
+    align-self: center;
+    p {
+      font-family: MyFont, cursive;
+      line-height: 36px;
+      font-size: 22px;
+      font-weight: bolder;
+    }
+    .top {
+      display: flex;
+      padding-bottom: 2.5%;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        text-transform: uppercase;
+        font-size: 36px;
+        //   letter-spacing: -1px;
+        font-family: "Bebas Neue", cursive;
+      }
+
+      border-bottom: 2px solid #fff;
+    }
+   
+    .bottom {
+      padding: 5% 0;
+    }
+  }
+}

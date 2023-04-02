@@ -1,24 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
     <>
-      <nav>
-        <h2>Chemazu</h2>
+      <nav className="home-nav">
+        <h2>Cadence</h2>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/#about">About</a>
+            <Link to="/#about">About</Link>
           </li>
           <li>
-            <a href="/#project">Projects</a>
+            <Link to="/#project">Projects</Link>
           </li>
           <li>
-            <a href="/#contact">Contacts</a>
+            <Link to="/#contact">Contacts</Link>
           </li>
         </ul>
+        <p>Search</p>
       </nav>
     </>
   );

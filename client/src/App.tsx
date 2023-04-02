@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Form from "./component/Form";
 import Home from "./views/Home/Home";
 import Recipe from "./views/Recipe";
@@ -19,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/meal/:id" element={<Meal />} />
+        <Route path="/recipe/:id" element={<Recipe />} />
+
 
         {/* <Route path="/">{<Home />} </Route>
         <Route path="/meal/:id">{<Meal />}</Route> */}

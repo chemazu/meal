@@ -16,21 +16,27 @@
     border-radius: 10px;
   }
   .circle {
-    border-radius: 50%;
+    // border-radius: 50%;
     width: 150px;
     height: 150px;
-    background-color: #cee5ed;
+    // background-color: #cee5ed;
+    background-image:url("../../images/Ellipse.svg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+  background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 30px;
-    right: 0px;
+    top: 20px;
+    right: -10px;
     color: #fff;
     text-transform: uppercase;
+    opacity: .6;
 
     p {
       font-size: 16px;
+      opacity: 1;
     }
   }
 

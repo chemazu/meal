@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/components/recipe-card.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 

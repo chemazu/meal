@@ -19,7 +19,7 @@ h2 {
     .ingredient-wrapper {
       padding: 10%;
       border-radius: 50px;
-      background-color: #5f1350;
+      background-color: $site-primary-color;
       color: #fffaed;
       margin-top: 5%;
       p {
@@ -51,6 +51,32 @@ h2 {
     padding: 3% 0;
     .top {
       margin-bottom: 5%;
+
+      .toggle-div {
+        display: flex;
+        align-items: center;
+        span {
+          max-width: 30px;
+        }
+        .switch {
+          width: 30px;
+          height: 20px;
+          border: 1px solid $site-primary-color;
+          background-color: gold;
+          position: relative;
+          margin: 0 1em;
+          &:before {
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 4px;
+            bottom: 4px;
+            background-color: red;
+            position: absolute;
+            transform: translateX(12px);
+          }
+        }
+      }
     }
   }
   .nutrionalvalue {
@@ -68,7 +94,7 @@ h2 {
       width: 100%;
       padding: 10%;
       border-radius: 50px;
-      background-color: #5f1350;
+      background-color: $site-primary-color;
       box-sizing: border-box;
       height: 65%;
       color: #fffaed;
@@ -87,7 +113,8 @@ h2 {
           font-size: 24px;
           padding: 20px 0;
         }
-        p {
+        p,
+        span {
           font-family: MyFont, cursive;
 
           line-height: 36px;
@@ -123,7 +150,7 @@ h2 {
   button {
     border-radius: 10px;
     padding: 10px 20px;
-    color: #5f1350;
+    color: $site-primary-color;
     background-color: #fffaed;
     border: 0;
     font-family: "Bebas Neue", cursive;
@@ -138,7 +165,7 @@ h2 {
 .recipe-section-wrapper {
   padding: 2.5% 7.5%;
   background-color: #702c63;
-  background-color: #5f1350;
+  background-color: $site-primary-color;
 
   color: #fffaed;
 
@@ -223,7 +250,7 @@ h2 {
 
     input {
       border-radius: 10px;
-      border: 1px solid #5f1350;
+      border: 1px solid $site-primary-color;
       padding: 5px 10px;
       margin-right: 2%;
       font-family: MyFont, cursive;
@@ -239,7 +266,7 @@ h2 {
     button {
       border-radius: 10px;
       padding: 10px 20px;
-      background-color: #5f1350;
+      background-color: $site-primary-color;
       color: #fffaed;
       border: 0;
       font-family: "Bebas Neue", cursive;
@@ -255,7 +282,8 @@ h2 {
 .footer {
   display: flex;
   padding: 5% 10%;
-  background-color: #702c63;
+  background-color: $site-primary-color-light;
+
   justify-content: space-between;
   .footer-area {
     width: 30%;
@@ -293,10 +321,32 @@ h2 {
     padding: 5%;
     .left {
       width: 100%;
-      .ingredient-wrapper .top {
+      padding-top: 10%;
+      .ingredient-wrapper {
+        .top {
+          h2 {
+            font-size: 22px;
+          }
+          p {
+            font: 14px;
+          }
+        }
         p {
-          line-height: 18px;
+          line-height: 22px;
           font-size: 16px;
+        }
+
+        .nutritional-info {
+          .top {
+            .toggle-div {
+              span {
+                display: flex;
+                max-width: 35px;
+                flex-wrap: wrap;
+                text-align: center;
+              }
+            }
+          }
         }
       }
       .circle {
@@ -317,6 +367,7 @@ h2 {
       .meal-item {
         width: 80vw;
         height: 80vw;
+        margin-bottom: 5%;
       }
     }
     .right {

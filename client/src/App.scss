@@ -1,0 +1,19 @@
+$firstfont: "Bebas Neue", cursive;
+$site-primary-color: #5f1350;
+$site-primary-color-light: #702c63;
+
+
+
+// views
+
+@import "./styles/meal.scss";
+@import "./styles/recipe.scss";
+
+// components
+
+@import "./styles/components/navbar.scss";
+@import "./styles/components/mealitem.scss";
+
+@import "./styles/components/recipe-card.scss";
+@import "./styles/components/icon-animation.scss";
+

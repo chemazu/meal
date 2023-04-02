@@ -1,9 +1,10 @@
 import React from "react";
 import MealItem from "../../component/MealItem";
-import "../../styles/meal.scss";
 import tasty from "../../images/tasty.svg";
-
 import RecipeItem from "../../component/RecipeItem";
+import NavBar from "../../component/Navbar";
+import Footer from "../../component/Footer";
+import Subscribe from "../../component/Subscribe";
 
 export default function Meal() {
   let nutrionalvalues = {
@@ -19,6 +20,7 @@ export default function Meal() {
   // color options #bfcfb0
   return (
     <>
+      <NavBar />
       <div className="meal-page">
         <div className="left">
           <MealItem />
@@ -40,7 +42,12 @@ export default function Meal() {
             <div className="nutritional-info">
               <div className="top">
                 <h2>Ingredients</h2>
-                <p>100grams/per serving</p>
+                <div className="toggle-div">
+                  <span>100 grams</span>
+
+                  <div className="switch"></div>
+                  <span>per serving</span>
+                </div>
               </div>
               <div className="nutrionalvalue">
                 <p>Energy</p>
@@ -50,23 +57,23 @@ export default function Meal() {
                 </p>
               </div>
               <div className="nutrionalvalue">
-                <p>Fat</p> <p className="value">{nutrionalvalues.fats} kg</p>
+                <p>Fat</p> <p className="value">{nutrionalvalues.fats} g</p>
               </div>
               <div className="nutrionalvalue">
                 <p>Carbohydrates</p>{" "}
-                <p className="value">{nutrionalvalues.carbohydrates} kg</p>
+                <p className="value">{nutrionalvalues.carbohydrates} g</p>
               </div>
               <div className="nutrionalvalue">
                 <p>Fibers</p>{" "}
-                <p className="value">{nutrionalvalues.fibers} kg</p>
+                <p className="value">{nutrionalvalues.fibers} g</p>
               </div>
               <div className="nutrionalvalue">
                 <p>Proteins</p>{" "}
-                <p className="value">{nutrionalvalues.proteins} kg</p>
+                <p className="value">{nutrionalvalues.proteins} g</p>
               </div>
               <div className="nutrionalvalue">
                 <p>Sodium</p>{" "}
-                <p className="value">{nutrionalvalues.sodium} kg</p>
+                <p className="value">{nutrionalvalues.sodium} g</p>
               </div>
               <div className="button-wrapper">
                 <button>Compare this</button>
@@ -120,45 +127,8 @@ export default function Meal() {
           </div>
         </div>
       </section>
-      <section className="sub-form">
-        <img src={tasty} alt="logo" />
-        <h2>we love healthy foods</h2>
-        <p>
-          Do you also think Cadence is without more the tastiest? Read more
-          about our products, whole foods, super tasty recipes and health tips
-          in our newsletter.
-        </p>
-        <form>
-          <input type="text" placeholder="First name" />
-          <input type="email" placeholder="Email address" />
-          <button>Subscribe</button>
-        </form>
-      </section>
-      <div className="footer">
-        <div className="footer-area">
-          <h2>Cadence is ready for you!</h2>
-          <p>
-            If you have any questions about our products, whole foods or
-            anything related to food and nutrients, let us know. We are happy to
-            help.
-          </p>
-          <p>
-            Monday - Friday 9 am - 5 pm <br />
-            +31 85 0666 134
-            <br /> info@tastybasics.de
-          </p>
-        </div>
-        <div className="footer-area second ">
-          <h4>Menu</h4>
-          <h4>Recipes</h4>
-          <h4>Meal plans</h4>
-        </div>
-        <div className="footer-area third">
-        <h4>FAQ</h4>
-          <h4>Meal Tracking</h4>
-        </div>
-      </div>
-      <div className="bottom-bar "></div>
+      <Subscribe />
+      <Footer />
     </>
   );
 }
