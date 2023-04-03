@@ -6,6 +6,7 @@ import Home from "./views/Home/Home";
 import Recipe from "./views/Recipe";
 import { Route, Routes } from "react-router-dom";
 import Meal from "./views/Meal";
+import CalorieForm from "./views/CalorieForm";
 
 function App() {
   const questions = [
@@ -20,6 +21,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/meal/:id" element={<Meal />} />
         <Route path="/recipe/:id" element={<Recipe />} />
+        <Route path="/getstarted" element={<CalorieForm />} />
+
 
 
         {/* <Route path="/">{<Home />} </Route>
