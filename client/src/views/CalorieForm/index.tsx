@@ -1,82 +1,98 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "../../styles/calorie-form.scss";
+import clock from "../../images/clock.svg";
 
-export default function CalorieForm() {
-  const [circleWidth, setCircleWidth] = useState(20);
-  const [scrollLocked, setScrollLocked] = useState(false);
+export default function Calorieform() {
+  const [currentItem, setCurrentItem] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const newWidth = 20 + window.pageYOffset * 0.5;
-      // set width range for circle
-      if ( newWidth < 20) {
-        // setCircleWidth(20);
-        console.log("first")
-      }
-      console.log(circleWidth, newWidth);
-      if (newWidth < 410) {
-        setCircleWidth(newWidth);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  // const [circleWidth, setCircleWidth] = useState(20);
-  // const [scrollLocked, setScrollLocked] = useState(false);
-  // const scrollTimeout: any = useRef(null);
-  // const scrollLockHeight = 100; // example height at which scroll lock is enabled
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (!scrollLocked && window.pageYOffset >= scrollLockHeight) {
-  //       setScrollLocked(true);
-  //     }
-  //     const newWidth = 20 + window.pageYOffset * 0.1;
-  //     setCircleWidth(newWidth);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [scrollLocked]);
-
-  // useEffect(() => {
-  //   if (scrollLocked) {
-  //     document.body.style.overflow = "hidden"; // disable scroll on body element
-  //     scrollTimeout.current = setTimeout(() => {
-  //       setScrollLocked(false);
-  //     }, 2000); // example time in milliseconds after which scroll lock is disabled
-  //   } else {
-  //     document.body.style.overflow = "auto"; // enable scroll on body element
-  //     clearTimeout(scrollTimeout.current);
-  //   }
-  // }, [scrollLocked]);
+  const [calorieFormData, setCalorieFormData] = useState([
+    { title: "Age", value: "" },
+    { title: "Sex", value: "" },
+  ]);
+  const increaseCurrentItem = (e: any) => {
+    e.preventDefault();
+    setCurrentItem(currentItem + 1);
+  };
+  const handleInputChange = (index: any, value: any) => {
+    const updatedFormData = [...calorieFormData];
+    updatedFormData[index].value = value;
+    setCalorieFormData(updatedFormData);
+  };
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log(calorieFormData);
+  };
   return (
-    <div>
-      CalorieForm
-      <div className="pusha-t"></div>
-      <div id="animated-example" className="animated fadeIn">
-        <p>Hover up</p>
-      </div>
-      <section className="scroll-wrapper">
-        <div
-          className="circle"
-          style={{
-            width: `${circleWidth}px`,
-            height: `${circleWidth}px`,
-            backgroundColor: "green",
-          }}
-        >
-          <p className="scroll-circle">Text on a Yellow Circle</p>
-        </div>
-      </section>
-      <section className="batty"> popopo</section>
+    <div className="calorie-form-wrapper">
+      <form className="calorie-form">
+        {currentItem === 0 && (
+          <div className="intro-item slide-up">
+            <h2>
+              Let's gather your information to calculate your daily calorie
+              needs for <br />
+              personalized recommendations.
+            </h2>
+            <div className="button-wrapper">
+              <button
+                onClick={(e) => {
+                  increaseCurrentItem(e);
+                }}
+              >
+                Sure
+              </button>
+              <span>
+                Press <strong>Enter ↵</strong>
+              </span>
+            </div>
+            <div className="timeline">
+              <p>Takes 5 Mins</p>
+            </div>
+          </div>
+        )}
+        {currentItem >= 1 &&
+          calorieFormData.map((item, index, arr) => {
+            return (
+              <>
+                <div
+                  style={{
+                    display: index === currentItem - 1 ? "block" : "none",
+                  }}
+                  className="slide-up form-item"
+                >
+                  <div className="form-item-title">
+                    <span> 1* {item.title}</span>
+                  </div>
+                  <input
+                    className="form-input"
+                    placeholder="Type your answer here..."
+                    onChange={(e) => handleInputChange(index, e.target.value)}
+                  />
+                  <button
+                    className="slow-slide-up calorie-form-button"
+                    onClick={(e) => {
+                      increaseCurrentItem(e);
+                    }}
+                  >
+                    Button
+                  </button>
+                </div>
+              </>
+            );
+          })}
+        {currentItem > calorieFormData.length && (
+          <div style={{ display: "block" }}>
+            End
+            <button
+              className="slow-slide-up calorie-form-button"
+              onClick={(e) => {
+                handleSubmit(e);
+              }}
+            >
+              Submit
+            </button>
+          </div>
+        )}
+      </form>
     </div>
   );
 }
