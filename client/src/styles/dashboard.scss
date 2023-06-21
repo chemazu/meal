@@ -1,0 +1,103 @@
+.dashboard-header {
+  background-image: url("../images//dash-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // height: 50vh;
+  padding: 5% 10%;
+  h1 {
+    // font-family: "Bebas Neue", cursive;
+    font-size: 4rem;
+  }
+  p {
+    padding: 0.75rem 0;
+  }
+
+  .underline {
+    width: 60%;
+    height: 3px;
+    color: #000;
+    background-color: #000;
+    margin: 1.5rem 0;
+  }
+  .single-help {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 15%;
+    padding: 2%;
+  }
+}
+.meal-action {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5% 10%;
+  align-items: center;
+
+  .today-meal {
+    display: flex;
+    // border: 1px solid #e5e5e5;
+    width: 100%;
+    // align-self: center;
+    justify-content: space-between;
+    // padding: 0 2.5%;
+    // background-color: #e5e5e5;
+  // border: .5px solid #e5e5e5;
+  border-radius: 10px;
+
+
+  }
+  .action-selector {
+    padding-left: 15%;
+    padding-bottom: 1rem;
+  }
+}
+.single-meal-item {
+  width: 30%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  
+
+
+  hr {
+    width: 10%;
+    border: 1.5px solid orange;
+    margin-bottom: 2.5%;
+  }
+  .meal-image-holder {
+    padding: 2.5% 0;
+  position: relative;
+
+  }
+  .meal-image {
+    height: 80px;
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover; /* Prevent resizing */
+    object-position: center center; /* Position the image in the center */
+  }
+
+  .meal-text {
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0.5rem;
+    display: flex;
+    z-index: 4;
+    padding-left: 50%;
+    width: 95%;
+    padding-bottom: 2.5%;
+    p {
+      padding: 2.5% 7.5%;
+      // background-color: #e5e5e5;
+      // opacity: 0.5;
+      // color:#fff;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      // padding: 10px;
+    }
+  }
+  .meal-title {
+    font-weight: bold;
+    width: 60%;
+  }
+}

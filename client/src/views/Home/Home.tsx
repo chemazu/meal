@@ -3,10 +3,10 @@ import NavBar from "../../component/Navbar";
 import tasty from "../../images/tasty.svg";
 import nuts from "../../images/nuts.svg";
 import mealImg from "../../images/chicken-rice.jpg";
-
 import "../../styles/home.scss";
 import MealItem from "../../component/MealItem";
 import InfiniteSlider from "../../component/InfiniteSlider";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -15,13 +15,15 @@ export default function Home() {
       <header>
         <h2>
           Fresh, healthy, and delicious meals made just for you: experience the
-          best in meal prep delivery
+          best in meal prep delivery <Link to ="/getstarted">GET STARTED</Link>
         </h2>
         <p>
           Nature offers everything you need. Nothing more and nothing less. Just
           right as it is https://tastybasics.nl/ https://www.daily-harvest.com/
           good animation: https://www.quayhouse.com.sg/ homepage slider
           https://www.pitayafoods.com/
+
+          https://www.trulean.com/
         </p>
         <div className="search-div">
           <input type="search" placeholder="What are you Looking for" />

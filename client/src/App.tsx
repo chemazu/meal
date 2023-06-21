@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
+import axios from "axios";
 import "./App.scss";
 import Form from "./component/Form";
 import Home from "./views/Home/Home";
@@ -7,14 +8,15 @@ import Recipe from "./views/Recipe";
 import { Route, Routes } from "react-router-dom";
 import Meal from "./views/Meal";
 import CalorieForm from "./views/CalorieForm";
+import Register from "./views/Register/Index";
+import Login from "./views/Login/Index";
+import ForgotPassword from "./views/Login/ForgotPassword";
+import Dashboard from "./views/Dashboard";
+import ProtectedRoute from "./component/ProtectedRoute";
 
 function App() {
-  const questions = [
-    { id: 1, text: "What is your name?", type: "text" },
-    { id: 2, text: "What is your email?", type: "email" },
-    { id: 3, text: "What is your age?", type: "number" },
-    { id: 4, text: "What is your favorite color?", type: "text" },
-  ];
+  axios.defaults.baseURL = "http://localhost:8000";
+  const isAuthenticated = !!localStorage.getItem("token");
   return (
     <div className="App">
       <Routes>
@@ -22,6 +24,10 @@ function App() {
         <Route path="/meal/:id" element={<Meal />} />
         <Route path="/recipe/:id" element={<Recipe />} />
         <Route path="/getstarted" element={<CalorieForm />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/dashboard" element={<Dashboard />} />
 
 
 

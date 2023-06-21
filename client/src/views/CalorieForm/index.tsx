@@ -55,6 +55,8 @@ export default function Calorieform() {
     e.preventDefault();
     setCurrentItem(currentItem + 1);
   };
+
+  const ff = () => {};
   const handleIncreaseCurrentItem = () => {
     if (currentItem <= calorieFormData?.length - 1) {
       setCurrentItem(currentItem + 1);
@@ -150,9 +152,8 @@ export default function Calorieform() {
           </div>
         )}
         {/* GENDER DIV DONT DELETE */}
-
         {currentItem >= 1 &&
-          calorieFormData.map((item, index, arr) => {
+          calorieFormData.map((item, index) => {
             return index === 1 ? (
               <div
                 className="gender-div"
