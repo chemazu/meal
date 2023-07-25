@@ -13,6 +13,8 @@ import Login from "./views/Login/Index";
 import ForgotPassword from "./views/Login/ForgotPassword";
 import Dashboard from "./views/Dashboard";
 import ProtectedRoute from "./component/ProtectedRoute";
+import MealTracker from "./views/Dashboard/MealTracker";
+import HomeCopy from "./views/Home/Home copy";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:8000";
@@ -21,6 +23,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/1" element={<HomeCopy />} />
+
         <Route path="/meal/:id" element={<Meal />} />
         <Route path="/recipe/:id" element={<Recipe />} />
         <Route path="/getstarted" element={<CalorieForm />} />
@@ -28,6 +32,8 @@ function App() {
         <Route path="/signin" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/mealtracker" element={<MealTracker />} />
+
 
 
 

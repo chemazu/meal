@@ -19,16 +19,21 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@types/uuid": "^9.0.2",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.17.1",
+    "install": "^0.13.0",
     "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.3.0",
     "nodemon": "^2.0.21",
+    "npm": "^9.7.2",
+    "react-icons": "^4.10.1",
     "react-router-dom": "^6.9.0",
     "recharts": "^2.5.0",
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "uuid": "^9.0.0"
   }
 }

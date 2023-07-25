@@ -1,0 +1,73 @@
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5% 7.5%;
+  align-items: center;
+  color: #000;
+  //   font-family: "Bebas Neue", cursive;
+  font-family: $firstfont;
+  background-color: transparent;
+  position: fixed;
+  padding-bottom: 0;
+
+  left: 0;
+  right: 0;
+  z-index: 2;
+  .logo-div {
+    padding: 0.6rem 0.75rem;
+
+    h2 {
+      font-size: 24px;
+      color: $site-primary-color-light;
+
+      align-items: center;
+      text-transform: capitalize;
+
+    }
+    img {
+      height: 24px;
+    }
+    .logo{
+      margin-right: 5px;
+
+    }
+    background-color: #fffaed;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  ul {
+    display: flex;
+    // flex-grow: 1;
+    width: 40%;
+    justify-content: space-evenly;
+    list-style: none;
+    text-decoration: none;
+    font-size: 24px;
+    background-color: #fffaed;
+    padding: 0.5rem 0.75rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  p {
+    font-size: 24px;
+  }
+}
+
+.dash-nav {
+  ul {
+    width: 20%;
+  }
+  h2 {
+    width: 40%;
+    text-align: center;
+  }
+}

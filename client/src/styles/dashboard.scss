@@ -10,7 +10,7 @@
     font-size: 4rem;
   }
   p {
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
   }
 
   .underline {
@@ -20,10 +20,15 @@
     background-color: #000;
     margin: 1.5rem 0;
   }
+  .help-holder{
+    display: flex;
+    width: 50%;
+justify-content: space-between;
+  }
   .single-help {
     background-color: #fff;
     border-radius: 5px;
-    width: 15%;
+    width: 30%;
     padding: 2%;
   }
 }
@@ -33,7 +38,8 @@
   padding: 2.5% 10%;
   align-items: center;
 
-  .today-meal {
+  .today-meal,
+  .weekly-meal {
     display: flex;
     // border: 1px solid #e5e5e5;
     width: 100%;
@@ -41,10 +47,8 @@
     justify-content: space-between;
     // padding: 0 2.5%;
     // background-color: #e5e5e5;
-  // border: .5px solid #e5e5e5;
-  border-radius: 10px;
-
-
+    // border: .5px solid #e5e5e5;
+    border-radius: 10px;
   }
   .action-selector {
     padding-left: 15%;
@@ -55,8 +59,6 @@
   width: 30%;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  
-
 
   hr {
     width: 10%;
@@ -65,8 +67,7 @@
   }
   .meal-image-holder {
     padding: 2.5% 0;
-  position: relative;
-
+    position: relative;
   }
   .meal-image {
     height: 80px;
@@ -100,4 +101,78 @@
     font-weight: bold;
     width: 60%;
   }
+}
+.account-details {
+  display: flex;
+  padding: 2% 10%;
+  width: 100%;
+
+  .order-history {
+    width: 80%;
+    .meal-plan-div {
+      .meal-plan-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 2.5% 5%;
+        padding-left: 0;
+        .single-meal-plan {
+          width: 300px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          border-radius: 5px;
+          overflow: hidden;
+          img {
+            width: 300px;
+          }
+
+          .single-meal-plan-details {
+            padding: 20px;
+            height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .meal-plan-title {
+              font-weight: 700;
+              font-size: 16px;
+              width: 250px;
+            }
+            .diet-type {
+              border-width: 1px;
+              border-style: solid;
+              padding: 2px 5px;
+              border-radius: 4px;
+              font-size: 11.5px;
+              margin-right: 5px;
+              width: fit-content;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.saved-items-div {
+  .meal-item {
+    width: 200px;
+    height: 200px;
+ 
+  }
+  .meal-item .circle {
+    width: 50px;
+    height: 50px;
+    p{
+      display: none;
+    }
+  }
+
+  .saved-items-wrapper{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 2.5% 5%;
+  }
+}
+.saved-items-div {
+  padding: 2% 10%;
 }

@@ -2,29 +2,54 @@ $firstfont: "Bebas Neue", cursive;
 $site-primary-color: #5f1350;
 $site-primary-color-light: #702c63;
 
-
-
 // views
 
 @import "./styles/meal.scss";
+@import "./styles/home.scss";
+
 @import "./styles/recipe.scss";
 @import "./styles/register.scss";
 @import "./styles/dashboard.scss";
 
-
-
 // components
 
 @import "./styles/components/navbar.scss";
+@import "./styles/components/home-nav.scss";
+
 @import "./styles/components/mealitem.scss";
 
 @import "./styles/components/recipe-card.scss";
 @import "./styles/components/icon-animation.scss";
+@import "./styles/components/smoothieitem.scss";
 
-
-
-a{
-    text-decoration: none;
-    color:inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+.pry-button {
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #5f1350;
+  color: #fffaed;
+  border: 0;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 2px;
+  line-height: 36px;
+  font-size: 22px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.sec-button{
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #5f1350;
+    background-color: #fffaed;
+    border: 0;
+    font-family: "Bebas Neue", cursive;
+    letter-spacing: 2px;
+    line-height: 36px;
+    font-size: 22px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}

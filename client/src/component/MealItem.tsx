@@ -3,7 +3,7 @@ import React from "react";
 type Props = { hover?: Boolean };
 export default function MealItem({ hover }: Props) {
   return (
-    <div className={`meal-item ${hover ? "meal-hover" : ""}`}>
+    <div className={`meal-item${hover ? "meal-hover" : ""}`}>
       <div className="content">
         <h4>Chicken and Rice</h4>
         <ul>
