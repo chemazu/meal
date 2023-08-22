@@ -22,8 +22,9 @@ export default function HomeCopy() {
           right as it is https://tastybasics.nl/ https://www.daily-harvest.com/
           good animation: https://www.quayhouse.com.sg/ homepage slider
           https://www.pitayafoods.com/
-
+          https://prepkitchen.co.uk/
           https://www.trulean.com/
+          https://prepkitchen.co.uk/order/goals
         </p>
         <div className="search-div">
           <input type="search" placeholder="What are you Looking for" />

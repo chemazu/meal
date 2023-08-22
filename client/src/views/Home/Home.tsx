@@ -24,8 +24,10 @@ import blackSesameDeco from "../../images/papaya-deco.avif";
 
 import MealItem from "../../component/MealItem";
 import SmoothieItem from "../../component/SmoothieItem";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
+  let navigate = useNavigate();
   const courseListContainerRef: React.MutableRefObject<HTMLDivElement | null> =
     useRef(null);
 
@@ -73,33 +75,52 @@ export default function Home() {
         <div className="cta-button">
           <h2>we love healthy foods </h2>
           <p>
-            Do you also think Cadence is without more the tastiest? Read more
-            about our products, whole foods, super tasty recipes and health tips
-            in our newsletter.
+            Are you ready to embark on a journey to culinary delight and peak
+            physical vitality? Look no further! Cadence invites you to savor the
+            mouthwatering fusion of taste and health.
           </p>
-          <button>Call to Action</button>
+          <button
+            onClick={() => {
+              navigate("/getstarted");
+            }}
+          >
+            Get Started
+          </button>
         </div>
       </section>
-      <section className="features">
+      <section className="features-wrapper">
         <div>
-          <img src={cook} alt="" />
-          <p>Locally Sourced</p>
+          <h2>How it works</h2>
         </div>
-        <div>
-          <img src={cook} alt="" />
-          <p>All natural ingriedeints</p>
-        </div>
-        {/* <div>
+        <div className="features">
+          <div>
+            <img src={cook} alt="" />
+            <h4> Pick your plan & meals</h4>
+            <p>
+              Define your goal and choose meals from our biweekly rotating menu
+            </p>
+          </div>
+          {/* <div>
           <img src={cook} alt="" />
           <p>Chef Prepared</p>
         </div> */}
-        <div>
-          <img src={cook} alt="" />
-          <p>Budget-friendly</p>
-        </div>
-        <div>
-          <img src={cook} alt="" />
-          <p>Convenient</p>
+          <div>
+            <img src={cook} alt="" />
+            <h4>We cook & deliver</h4>
+            <p>
+              Our chefs freshly prepare your dishes to restaurant quality with
+              macro precision, then they’re delivered chilled to your door by
+              our courier
+            </p>
+          </div>
+          <div>
+            <img src={cook} alt="" />
+            <h4>Enjoy & succeed</h4>
+            <p>
+              Enjoy delicious healthy food without the effort of cooking to keep
+              you on track. No excuses!
+            </p>
+          </div>
         </div>
       </section>
       <section className="benefits">
@@ -108,25 +129,35 @@ export default function Home() {
         </div>
         <div className="right">
           <h2>
-            Hello hydration.👋 <br />
-            Goodbye cravings.
+            EMBRACE EFFORTLESS MEAL PREP.👋
+            <br />
+            SAY GOODBYE TO HASSLES👋
           </h2>
           <p>
-            Make cravings a thing of the past, elevate your mood, and
-            supercharge your hydration with Everyday Fit™. <br />
-            It’s game-changing hydration backed by science!
+            Make mealtime struggles a thing of the past, elevate your culinary
+            experience, and supercharge your nutrition with Cadence™. <br />It’s
+            revolutionary meal prep reimagined for your convenience and
+            nourishment, driven by culinary expertise."
           </p>
-          <button className="sec-button">Call to Action</button>
+          <button className="sec-button">Meal plans</button>
         </div>
       </section>
       <section className="product-options">
         <div className="text">
-          <h2>OUR FLAVOR? UNMATCHED</h2>
-          Our in-house chefs take sustainably-sourced fruits + vegetables and
+          <h2>Your Favourites</h2>
+
+        </div>
+        <div>
+        Our in-house chefs take sustainably-sourced fruits + vegetables and
           turn them into craveworthy eats. Then, we pass all that goodness onto
           you. We got you. 24/7.
         </div>
         <div className="product-wrapper">
+        <MealItem />
+            <MealItem />
+            <MealItem />
+        </div>
+        {/* <div className="product-wrapper">
           <div className="controls">
             <div onClick={() => scroll(-100)} className="left-arrow-control">
               <i className="fas fa-arrow-left"></i>
@@ -144,7 +175,7 @@ export default function Home() {
             <MealItem />
             <MealItem />
           </div>
-        </div>
+        </div> */}
       </section>
       <section className="benefits-2">
         <div className="right">

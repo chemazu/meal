@@ -1,9 +1,35 @@
 .smoothie-item {
-  width: 300px;
   background-color: #fffaed;
-margin: 0 2rem;
-  img {
-    width: 300px;
+  margin: 0 2rem;
+  border-radius: 15px;
+  position: relative;
+  //   overflow: hidden;
+  .content-box {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
+    .smoothie-title {
+      background-color: #702c63;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      padding: 10px 20px;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    .content-box {
+      display: flex;
+    }
+  }
+
+  img {
+    width: 320px;
   }
 }
