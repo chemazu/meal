@@ -58,20 +58,25 @@
         margin-right: 10px;
       }
     }
-    .recipe-image {
-      background-image: url("../images/recipe-card-bg.jpg");
-      width: 90%;
-      height: 500px;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: 10px;
+    .recipe-img {
+      // width: 90%;
+      // height: 500px;
+      // background-position: center;
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      // border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 75%;
+        border-radius: 10px;
+      }
     }
   }
   .ingridients,
   .directions {
     padding: 2.5% 0;
-    h3{
+    h3 {
       font-family: MyFont, cursive;
       line-height: 48px;
       font-size: 36px;
@@ -84,12 +89,10 @@
     }
     ul {
       padding: 2.5% 0;
-
     }
   }
-  .nutritional-info-wrapper{
-
-    .nutrionalvalue{
+  .nutritional-info-wrapper {
+    .nutrionalvalue {
       display: flex;
       justify-content: space-between;
     }
@@ -122,7 +125,7 @@
 
       border-bottom: 2px solid #fff;
     }
-   
+
     .bottom {
       padding: 5% 0;
     }

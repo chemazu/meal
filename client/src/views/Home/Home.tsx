@@ -88,7 +88,7 @@ export default function Home() {
           </button>
         </div>
       </section>
-      <section className="features-wrapper">
+      {/* <section className="features-wrapper">
         <div>
           <h2>How it works</h2>
         </div>
@@ -100,10 +100,7 @@ export default function Home() {
               Define your goal and choose meals from our biweekly rotating menu
             </p>
           </div>
-          {/* <div>
-          <img src={cook} alt="" />
-          <p>Chef Prepared</p>
-        </div> */}
+   
           <div>
             <img src={cook} alt="" />
             <h4>We cook & deliver</h4>
@@ -122,8 +119,8 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
-      <section className="benefits">
+      </section> */}
+      {/* <section className="benefits">
         <div className="left">
           <img src={feature1} alt="" />
         </div>
@@ -141,43 +138,8 @@ export default function Home() {
           </p>
           <button className="sec-button">Meal plans</button>
         </div>
-      </section>
-      <section className="product-options">
-        <div className="text">
-          <h2>Your Favourites</h2>
-
-        </div>
-        <div>
-        Our in-house chefs take sustainably-sourced fruits + vegetables and
-          turn them into craveworthy eats. Then, we pass all that goodness onto
-          you. We got you. 24/7.
-        </div>
-        <div className="product-wrapper">
-        <MealItem />
-            <MealItem />
-            <MealItem />
-        </div>
-        {/* <div className="product-wrapper">
-          <div className="controls">
-            <div onClick={() => scroll(-100)} className="left-arrow-control">
-              <i className="fas fa-arrow-left"></i>
-              &#8592;
-            </div>
-            <div onClick={() => scroll(100)} className="right-arrow-control">
-              <i className="fas fa-arrow-right"></i>
-              &#8594;
-            </div>
-          </div>
-          <div ref={courseListContainerRef} className="slide-item-container">
-            <MealItem />
-            <MealItem />
-            <MealItem />
-            <MealItem />
-            <MealItem />
-          </div>
-        </div> */}
-      </section>
-      <section className="benefits-2">
+      </section> */}
+      {/* <section className="benefits-2">
         <div className="right">
           <h2>
             NONE OF THE PREP.👋 <br />
@@ -192,8 +154,8 @@ export default function Home() {
         <div className="left">
           <img src={feature2} alt="" />
         </div>
-      </section>
-      <section className="smoothie-product-options">
+      </section> */}
+      {/* <section className="smoothie-product-options">
         <div className="top-text">
           <div className="text">
             <h2>All natural. Made for you.</h2>
@@ -217,10 +179,10 @@ export default function Home() {
 
           <button>Lets Get Started</button>
         </div>
-      </section>
-      <Subscribe />
+      </section> */}
+      {/* <Subscribe /> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

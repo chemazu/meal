@@ -65,19 +65,18 @@
     }
   }
 
-  .features-wrapper{
-
+  .features-wrapper {
     padding: 3% 7.5%;
-    h2,h4{
+    h2,
+    h4 {
       text-align: center;
     }
-
   }
   .features {
     display: flex;
     justify-content: space-between;
     padding: 3% 0%;
-    align-items:flex-start ;
+    align-items: flex-start;
     div {
       width: 30%;
       display: flex;
@@ -246,8 +245,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      h2{
-        padding: .5rem 0;
+      h2 {
+        padding: 0.5rem 0;
       }
       .text {
         max-width: 60%;
@@ -275,6 +274,17 @@
       width: 100%;
       justify-content: space-between;
       overflow: scroll;
+    }
+  }
+}
+@media screen and (max-width: 812px) {
+  
+  .home-page .home-header {
+    .cta-button {
+      width: 80%;
+    }
+    h2 {
+      font-size: 48px;
     }
   }
 }

@@ -10,7 +10,6 @@
   position: fixed;
   padding-bottom: 0;
 
-
   left: 0;
   right: 0;
   z-index: 2;
@@ -23,14 +22,12 @@
 
       align-items: center;
       text-transform: capitalize;
-
     }
     img {
       height: 24px;
     }
-    .logo{
+    .logo {
       margin-right: 5px;
-
     }
     background-color: #fffaed;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 5px;
@@ -71,4 +68,134 @@
     width: 40%;
     text-align: center;
   }
+}
+.mobile-nav {
+  display: none;
+}
+.mobile-nav-active {
+  display: none;
+}
+@media screen and (max-width: 812px) {
+  .landing-nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+    padding: 0.5% 7.5%;
+    align-items: center;
+    color: #fff;
+    //   font-family: "Bebas Neue", cursive;
+    font-family: $firstfont;
+    position: fixed;
+    padding-bottom: 0;
+
+    left: 0;
+    right: 0;
+    z-index: 2;
+    .top {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        height: 2rem;
+      }
+    }
+  }
+  .mobile-nav-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    background: #5f1350;
+    padding: 15% 12.5%;
+    padding-top: 20%;
+    justify-content: space-between;
+    color: #fff;
+    animation: slideInBackground 0.5s ease backwards;
+
+    .top {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        height: 2rem;
+      }
+    }
+    .middle {
+      font-family: "Cabin", sans-serif;
+      margin-top: -4rem;
+      line-height: 36px;
+      font-size: 24px;
+      height: 50%;
+      ul {
+        list-style: none;
+        height: 80%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        li {
+          animation: menuSlide .5s ease backwards 1 0.5s;
+          // animation-fill-mode: forwards;
+          // animation: name duration timing-function delay iteration-count direction fill-mode;
+        }
+
+        li:nth-child(1) {
+          animation-delay: 0.2s; /* Delay for the first item */
+        }
+
+        li:nth-child(2) {
+          animation-delay: .4s; /* Delay for the second item */
+        }
+
+        li:nth-child(3) {
+          animation-delay: .6s; /* Delay for the third item */
+        }
+
+        li:nth-child(4) {
+          animation-delay: .8s; /* Delay for the third item */
+        }
+
+        li:nth-child(5) {
+          animation-delay: 1s; /* Delay for the third item */
+        }
+      }
+    }
+    .end {
+      display: flex;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+
+      img {
+        width: 1.2rem;
+      }
+    }
+  }
+  @keyframes slideInBackground {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes menuSlide {
+    from {
+      transform: translateX(-90%);
+      transition-timing-function: ease-in;
+    }
+    to {
+      transform: translateX(0);
+      transition-timing-function: ease-out;
+    }
+  }
+
+ 
 }

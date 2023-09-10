@@ -4,16 +4,64 @@ import NavBar from "../../component/Navbar";
 import Subscribe from "../../component/Subscribe";
 import timer from "../../images/timer.svg";
 import recipeCard from "../../images/recipe-card-bg.jpg";
-export default function Recipe() {
+import recipeImg from "../../images/goat-meat-pepper-soup.jpeg";
 
-  let nutrionalvalues = {
-    calories: 570,
-    fats: 23,
-    carbohydrates: 20,
-    fibers: 23,
-    proteins: 34,
-    sodium: 0.03,
+export default function Recipe() {
+  // let nutrionalvalues = {
+  //   calories: 570,
+  //   fats: 23,
+  //   carbohydrates: 20,
+  //   fibers: 23,
+  //   proteins: 34,
+  //   sodium: 0.03,
+  // };
+
+  const singleMeal = {
+    title: "Goat Meat Pepper Soup",
+    prepTime: "45 minutes",
+    description:
+      "Uncover the delightful world of African comfort cuisine with Goat Meat Pepper Soup, an enticing blend of flavors that packs a protein punch while being supportive of both muscle growth and fat loss.",
+    nutrionalvalues: {
+      calories: 570,
+      fats: 23,
+      carbohydrates: 20,
+      proteins: 34,
+    },
+    ingredients: [
+      "100 g goat meat, cleaned and cut into bite-sized pieces",
+      "50 g potatoes, cubed",
+      "Crayfish",
+      "Scotch Bonnet peppers (Atarado)",
+      "Yellow Pepper",
+      "Cameroon Pepper",
+      "Peppersoup spice",
+      "Salt",
+      "Seasoning cubes",
+      "Onions",
+      "Ginger",
+      "Garlic",
+      "Handful of chopped basil (scent leaves)",
+    ],
+    preparation: [
+      "Begin by making the meat marinade. Blend together the peppers, onions, garlic, and ginger and crayfish until smooth.",
+      "Cut the goat meat into small pieces and place them in a pot. Season the meat with the prepared marinade, salt, seasoning cubes, Cameroon pepper, and allow it to cook over medium heat for 30-40 minutes.",
+      "While the meat is cooking, boil the unripe plantains for 10 minutes. Once boiled, drain the water and set the plantains aside.",
+      "Once the meat is cooked, add 4 cups of water to the pot along with the boiled plantains. Season the mixture with nutmeg, Peppersoup spice, crayfish, chopped scent leaves, and a touch more salt. Let it all simmer for an additional 15 minutes.",
+      "To finish, garnish the soup with chopped scent leaves and a chopped red pepper. Allow it to simmer for an additional minute, then serve the hot and flavorful soup.",
+    ],
+    tags: ["African", "High Protein", "Muscle Gain"],
+
+    // Now 'preparationSteps' is an array of strings, with each step represented as a separate string element.
   };
+  let {
+    nutrionalvalues,
+    title,
+    description,
+    tags,
+    ingredients,
+    preparation,
+    prepTime,
+  } = singleMeal;
   return (
     <>
       <NavBar />
@@ -22,49 +70,38 @@ export default function Recipe() {
         <div className="recipe-title">
           <div className="time">
             <img src={timer} alt="timer" />
-            <p>15 mins</p>
+            <p>{prepTime}</p>
           </div>
-          <h2>Protein Pancakes</h2>
-          <p className="sub-heading">
-            The Best Protein Pancakes! These are super easy with no refined
-            grains or refined sugar. Just oats, banana, and eggs!
-          </p>{" "}
-          <div className="recipe-image">recipe image</div>
+          <h2>{title}</h2>
+          <p className="sub-heading">{description}</p>{" "}
+          <div className="recipe-img">
+            <img src={recipeImg} />
+          </div>
           {/* <img src={recipeCard} alt="recipe-name" className="recipe-img" /> */}
           <div className="tag-wrapper">
-            <p>Breakfast</p>
-            <p>High Protein</p>
-            <p>Muscle Gain</p>
+            {tags.map((item) => {
+              return <p>{item}</p>;
+            })}
           </div>
         </div>
         <div className="ingridients">
-          <h3>Ingridients</h3>
+          <h3>Ingredients</h3>
           <ul>
-            <li>130 g blackberries (frozen of fresh)</li>
-            <li>60 g TastyBasics muesli nuts and pits</li>
-            <li>300 g yoghurt</li>
+            {ingredients.map((item) => {
+              return <li>{item}</li>;
+            })}
           </ul>
         </div>
         <div className="directions">
           <h3>Preparation</h3>
           <ul>
-            <li>
-              You can serve this breakfast as you wish. As shown in the picture,
-              we started off by filling our jar with a few tablespoons of
-              yoghurt, followed by a handful of smashed blackberries.
-            </li>
-            <li>
-              Add another layer of yoghurt, a layer of yohurt and blackberreis
-              mashed together and a layer of Muesli nuts and pits. Whatever is
-              to your liking.
-            </li>
-            <li>
-              Top off with 2-3 whole blackberries and your breakfast is done.
-            </li>
+            {preparation.map((item) => {
+              return <li>{item}</li>;
+            })}
           </ul>
         </div>
         <div className="nutritional-info-wrapper">
-        <div className="ingredient-wrapper">
+          <div className="ingredient-wrapper">
             <div className="nutritional-info">
               <div className="top">
                 <h2>Ingredients</h2>
@@ -89,18 +126,18 @@ export default function Recipe() {
                 <p>Carbohydrates</p>{" "}
                 <p className="value">{nutrionalvalues.carbohydrates} g</p>
               </div>
-              <div className="nutrionalvalue">
+              {/* <div className="nutrionalvalue">
                 <p>Fibers</p>{" "}
                 <p className="value">{nutrionalvalues.fibers} g</p>
-              </div>
+              </div> */}
               <div className="nutrionalvalue">
                 <p>Proteins</p>{" "}
                 <p className="value">{nutrionalvalues.proteins} g</p>
               </div>
-              <div className="nutrionalvalue">
+              {/* <div className="nutrionalvalue">
                 <p>Sodium</p>{" "}
                 <p className="value">{nutrionalvalues.sodium} g</p>
-              </div>
+              </div> */}
               <div className="button-wrapper">
                 <button>Compare this</button>
               </div>
