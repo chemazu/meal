@@ -3,6 +3,10 @@ import Footer from "../../component/Footer";
 import Subscribe from "../../component/Subscribe";
 import HomeNav from "../../component/HomeNav";
 import piggy from "../../images/piggy.svg";
+import order from "../../images/order.png";
+import deliver from "../../images/deliver.png";
+import enjoy from "../../images/enjoy.png";
+
 import sprout from "../../images/sprout.svg";
 import location from "../../images/location.svg";
 import cook from "../../images/cook.svg";
@@ -88,21 +92,21 @@ export default function Home() {
           </button>
         </div>
       </section>
-      {/* <section className="features-wrapper">
+      <section className="features-wrapper">
         <div>
           <h2>How it works</h2>
         </div>
         <div className="features">
           <div>
-            <img src={cook} alt="" />
+            <img src={order} alt="" />
             <h4> Pick your plan & meals</h4>
             <p>
               Define your goal and choose meals from our biweekly rotating menu
             </p>
           </div>
-   
+
           <div>
-            <img src={cook} alt="" />
+            <img src={deliver} alt="" />
             <h4>We cook & deliver</h4>
             <p>
               Our chefs freshly prepare your dishes to restaurant quality with
@@ -111,7 +115,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <img src={cook} alt="" />
+            <img src={enjoy} alt="" />
             <h4>Enjoy & succeed</h4>
             <p>
               Enjoy delicious healthy food without the effort of cooking to keep
@@ -119,7 +123,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section> */}
+      </section>
       {/* <section className="benefits">
         <div className="left">
           <img src={feature1} alt="" />
