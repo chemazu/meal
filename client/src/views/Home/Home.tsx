@@ -6,6 +6,7 @@ import piggy from "../../images/piggy.svg";
 import order from "../../images/order.png";
 import deliver from "../../images/deliver.png";
 import enjoy from "../../images/enjoy.png";
+import RecipeCard from "../../component/RecipeCard";
 
 import sprout from "../../images/sprout.svg";
 import location from "../../images/location.svg";
@@ -33,6 +34,7 @@ import blackSesameDeco from "../../images/papaya-deco.avif";
 import MealItem from "../../component/MealItem";
 import SmoothieItem from "../../component/SmoothieItem";
 import { Link, useNavigate } from "react-router-dom";
+import Recipe from "../Recipe";
 
 export default function Home() {
   let navigate = useNavigate();
@@ -184,20 +186,32 @@ export default function Home() {
             </p>
           </div>
         </div>
+
+        <div className="feature-button">
+          <button
+            className="pry-button"
+            onClick={() => {
+              navigate("/getstarted");
+            }}
+          >
+            View Full Menu
+          </button>
+        </div>
       </section>
-   
-      <section className="features-wrapper">
+
+      <section className="features-wrapper get-started">
         <div>
           <h2>Create the perfect plan for you </h2>
+          <p>
+            Not sure where to start? No problem! Take our quick quiz to discover
+            how you can optimize your life to get 1% better every day.
+          </p>
         </div>
-        <div className="features">
-          <div>
-            <img src={order} alt="" />
-            <h4> Pick your plan & meals</h4>
-            <p>
-              Define your goal and choose meals from our biweekly rotating menu
-            </p>
-          </div>
+
+        <button className="pry-button">Get started</button>
+
+        {/* <div className="features">
+ 
 
           <div>
             <img src={deliver} alt="" />
@@ -216,8 +230,17 @@ export default function Home() {
               you on track. No excuses!
             </p>
           </div>
+        </div> */}
+      </section>
+      <section className="features-wrapper">
+        <div>
+          <h2> Quick and easy healthy recipes.</h2>
+        </div>
+        <div>
+          <RecipeCard/>
         </div>
       </section>
+
       <section className="features-wrapper">
         <div>
           <h2>Don’t just take our word for it...</h2>
