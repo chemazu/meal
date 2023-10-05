@@ -14,7 +14,7 @@ export default function Footer() {
           <p>
             Monday - Friday 9 am - 5 pm <br />
             +31 85 0666 134
-            <br /> info@tastybasics.de
+            <br /> info@cadence.com
           </p>
         </div>
         <div className="footer-area second ">
