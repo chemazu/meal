@@ -296,7 +296,7 @@
   align-items: center;
   justify-content: center;
 }
-.get-started{
+.get-started {
   display: flex;
   display: flex;
   justify-content: space-between;
@@ -306,7 +306,7 @@
     text-align: left !important;
   }
   button {
-    height: fit-content ;
+    height: fit-content;
   }
 }
 @media screen and (max-width: 812px) {
@@ -325,9 +325,23 @@
         flex-direction: column;
         div {
           width: auto;
+          padding: 2% 0;
+          img {
+            margin: 2% 0;
+          }
         }
       }
     }
+    .get-started {
+      flex-direction: column;
+      h2 {
+        text-align: center !important;
+      }
+      .pry-button{
+        margin: 5% 0;
+      }
+    }
+
     .benefits {
       flex-direction: column;
       .left {

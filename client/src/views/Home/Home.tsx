@@ -232,16 +232,16 @@ export default function Home() {
           </div>
         </div> */}
       </section>
-      <section className="features-wrapper">
+      {/* <section className="features-wrapper">
         <div>
           <h2> Quick and easy healthy recipes.</h2>
         </div>
         <div>
           <RecipeCard/>
         </div>
-      </section>
+      </section> */}
 
-      <section className="features-wrapper">
+      {/* <section className="features-wrapper">
         <div>
           <h2>Don’t just take our word for it...</h2>
         </div>
@@ -272,7 +272,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <section className="benefits-2">
         <div className="right">
           <h2>
@@ -314,9 +314,9 @@ export default function Home() {
           <button>Lets Get Started</button>
         </div>
       </section> */}
-      {/* <Subscribe /> */}
+      <Subscribe />
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

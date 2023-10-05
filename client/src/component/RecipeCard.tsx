@@ -7,7 +7,7 @@ export default function RecipeCard({}: Props) {
     <div>
       <img src="" />
       <div>
-        <h2>Title</h2>
+        <h3>Title</h3>
         <p>Mini desc</p>
         <div>
             <p>Read Article</p>
