@@ -56,14 +56,13 @@ export default function Calorieform() {
     setCurrentItem(currentItem + 1);
   };
 
-  const ff = () => {};
   const handleIncreaseCurrentItem = () => {
-    if (currentItem <= calorieFormData?.length - 1) {
+    if (currentItem <= calorieFormData?.length) {
       setCurrentItem(currentItem + 1);
     }
   };
   const handleDecreaseCurrentItem = () => {
-    if (currentItem > 1 && currentItem <= calorieFormData?.length) {
+    if (currentItem > 1 && currentItem <= calorieFormData?.length + 1) {
       setCurrentItem(currentItem - 1);
     }
   };
@@ -91,19 +90,28 @@ export default function Calorieform() {
     handleInputChange(index, value.target.value);
     setTimeout(() => setCurrentItem(currentItem + 1), 900);
   };
+  function validateData(data: any) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].value === "") {
+        console.log(`Position ${i} is empty. Title: ${data[i].title}`);
+      } else {
+        console.log(true);
+        let result: any = calculateCalorieNeeds(calorieFormData);
+
+        return result;
+      }
+    }
+  }
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log(calorieFormData);
-    let result = calculateCalorieNeeds(calorieFormData);
-    console.log(calculateCalorieNeeds(calorieFormData));
-    setCalorieResult(calculateCalorieNeeds(calorieFormData));
-    console.log(calorieResult);
+    console.log(validateData(calorieFormData))
+
     setIsOpen(true);
   };
   useEffect(() => {
     const keyDownHandler = (event: any) => {
-      console.log("User pressed: ", event.key);
-
       if (event.key === "Enter") {
         event.preventDefault();
 
@@ -131,8 +139,7 @@ export default function Calorieform() {
           <div className="intro-item slide-up">
             <h2>
               Let's gather your information to calculate your daily calorie
-              needs for <br />
-              personalized recommendations.
+              needs for personalized recommendations.
             </h2>
             <div className="button-wrapper">
               <button
@@ -177,7 +184,7 @@ export default function Calorieform() {
                           calorieFormData[1].value === "Male" ? "" : "none",
                       }}
                     >
-                      {calorieFormData[1].value === "Male" && <p>C</p>}
+                      {calorieFormData[1].value === "Male" && <p></p>}
                     </div>
                   </div>
                   <img src={malesvg} alt="male" />
@@ -200,12 +207,12 @@ export default function Calorieform() {
                           calorieFormData[1].value === "Female" ? "" : "none",
                       }}
                     >
-                      {calorieFormData[1].value === "Female" && <p>C</p>}
+                      {calorieFormData[1].value === "Female" && <p></p>}
                     </div>
                   </div>
                   <img src={femalesvg} alt="male" />
                   <div className="text-option">
-                    <p>A</p>
+                    <p>B</p>
                     <span>Female</span>
                   </div>
                 </div>
@@ -229,6 +236,9 @@ export default function Calorieform() {
                     placeholder="Type your answer here..."
                     onChange={(e) => handleInputChange(index, e.target.value)}
                   >
+                    <option value="" disabled hidden>
+                      Select your activity level
+                    </option>
                     <option value="1.2">
                       Sedentary: little or no exercise
                     </option>
@@ -278,6 +288,9 @@ export default function Calorieform() {
                     placeholder="Type your answer here..."
                     onChange={(e) => handleInputChange(index, e.target.value)}
                   >
+                    <option value="" disabled hidden>
+                      Select your activity level
+                    </option>
                     <option value="1">Loose Weight : Calorie Deficit</option>
                     <option value="2">
                       Maintain Weight Healthy Body Composition
