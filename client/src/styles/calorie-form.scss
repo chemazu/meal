@@ -314,6 +314,15 @@
 .incomplete-field {
   color: red;
 }
+.footer-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-header {
+  justify-content: flex-end;
+}
 @media screen and (max-width: 812px) {
   .modal-dialog {
     padding: 0 2.5%;
@@ -356,8 +365,12 @@
     flex-direction: column;
     align-items: center;
   }
+  .middle-text-wrapper {
+    padding: 5% 0;
+  }
   .nutritional-breakdown {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 }

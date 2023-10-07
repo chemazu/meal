@@ -359,7 +359,9 @@ export default function Calorieform() {
         {currentItem > calorieFormData.length && (
           <div style={{ display: "block" }}>
             <Modal isOpen={isOpen}>
-              <ModalHeader>Close</ModalHeader>
+              <ModalHeader onClick={()=>{
+                setIsOpen(false)
+              }}>Close</ModalHeader>
               <ModalBody>
                 Congratulations on taking the first step towards a healthier
                 <div className="middle-div">
@@ -453,7 +455,7 @@ export default function Calorieform() {
 </div>
               </ModalBody>
               <ModalFooter>
-                <div className="button-wrapper" style={{ paddingTop: 0 }}>
+                <div className="button-wrapper footer-button-wrapper" style={{ paddingTop: 0 }}>
                   <button>Save</button>
                   <button>Create Meal Plan</button>
                 </div>
