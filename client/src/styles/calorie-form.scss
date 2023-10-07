@@ -311,7 +311,9 @@
     padding-bottom: 0.3rem;
   }
 }
-
+.incomplete-field {
+  color: red;
+}
 @media screen and (max-width: 812px) {
   .modal-dialog {
     padding: 0 2.5%;

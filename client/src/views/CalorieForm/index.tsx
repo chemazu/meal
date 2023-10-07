@@ -4,18 +4,20 @@ import clock from "../../images/clock.svg";
 import malesvg from "../../images/malesvg.svg";
 import femalesvg from "../../images/femalesvg.svg";
 import checkMark from "../../images/check-mark.svg";
+import { useAlert } from "react-alert";
 import { PieChart, Pie, Cell } from "recharts";
 
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import calculateCalorieNeeds from "./calorieFormCalculator";
 
 export default function Calorieform() {
+  const alert = useAlert();
   const [currentItem, setCurrentItem] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
   const [calorieResult, setCalorieResult] = useState<any>();
   const [goalDisplay, setGoalDisplay] = useState();
-
+  const [errorHolder, setErrorHolder] = useState<any>([]);
   const [calorieFormData, setCalorieFormData] = useState([
     { title: "Age", value: "" },
     { title: "Gender", value: "" },
@@ -66,7 +68,6 @@ export default function Calorieform() {
       setCurrentItem(currentItem - 1);
     }
   };
-  console.log(calorieFormData?.length - 1);
   const handleInputChange = (index: any, value: any) => {
     const updatedFormData = [...calorieFormData];
     updatedFormData[index].value = value;
@@ -90,25 +91,33 @@ export default function Calorieform() {
     handleInputChange(index, value.target.value);
     setTimeout(() => setCurrentItem(currentItem + 1), 900);
   };
-  function validateData(data: any) {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].value === "") {
-        console.log(`Position ${i} is empty. Title: ${data[i].title}`);
-      } else {
-        console.log(true);
-        let result: any = calculateCalorieNeeds(calorieFormData);
-
-        return result;
-      }
-    }
-  }
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(calorieFormData);
-    console.log(validateData(calorieFormData))
+    const errors = [];
+ 
+    for (let i = 0; i < calorieFormData.length; i++) {
+      if (calorieFormData[i].value === "") {
+        errors.push(i); // Push the position of the error into the errors array
+      }
+    }
 
-    setIsOpen(true);
+    if (errors.length > 0) {
+      setErrorHolder(errors);
+      alert.show("Complete fields!");
+      console.log(Math.min(...errors));
+      let a = Math.min(...errors);
+      setCurrentItem(a + 1);
+      console.log(errors)
+ console.log(calorieFormData)
+      // Update the errorHolder state with the positions of the errors
+    } else {
+      // setErrorHolder([]);
+
+      setIsOpen(true);
+
+      // Clear the errorHolder if there are no errors
+    }
   };
   useEffect(() => {
     const keyDownHandler = (event: any) => {
@@ -168,6 +177,8 @@ export default function Calorieform() {
                   display: index === currentItem - 1 ? "flex" : "none",
                 }}
               >
+                {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
+
                 <div
                   className={`male ${
                     calorieFormData[1].value === "Male" ? "flicker" : ""
@@ -226,6 +237,8 @@ export default function Calorieform() {
                   className="slide-up form-item"
                 >
                   <div className="form-item-title">
+                    {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
+
                     <span>
                       {" "}
                       {index + 1} * {item.title} Level (BMR)
@@ -236,7 +249,7 @@ export default function Calorieform() {
                     placeholder="Type your answer here..."
                     onChange={(e) => handleInputChange(index, e.target.value)}
                   >
-                    <option value="" disabled hidden>
+                    <option value="" selected disabled>
                       Select your activity level
                     </option>
                     <option value="1.2">
@@ -280,6 +293,7 @@ export default function Calorieform() {
                   <div className="form-item-title">
                     <span>
                       {" "}
+                      {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
                       {index + 1} * {item.title}
                     </span>
                   </div>
@@ -288,8 +302,8 @@ export default function Calorieform() {
                     placeholder="Type your answer here..."
                     onChange={(e) => handleInputChange(index, e.target.value)}
                   >
-                    <option value="" disabled hidden>
-                      Select your activity level
+                    <option value="" selected disabled>
+                      Select your goal
                     </option>
                     <option value="1">Loose Weight : Calorie Deficit</option>
                     <option value="2">
@@ -316,6 +330,8 @@ export default function Calorieform() {
                   }}
                   className="slide-up form-item"
                 >
+                  {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
+
                   <div className="form-item-title">
                     <span>
                       {" "}
@@ -431,17 +447,10 @@ export default function Calorieform() {
                   </div>
                 </div>
                 <div className="bottom-div">
-                  <p>
-                    Remember to consume a variety of colorful fruits and
-                    vegetables to ensure you're receiving essential
-                    micro-nutrients like vitamins and minerals.
-                  </p>
-                  <p>
-                    Exercise is a key component of a healthy lifestyle. Aim for
-                    at least 30 minutes of moderate exercise per day.
-                  </p>
-                  <p> Best of luck on your journey to better health!</p>
-                </div>
+  <p>Consume a variety of colorful fruits and vegetables for essential nutrients.</p>
+  <p>Aim for at least 30 minutes of daily exercise for a healthy lifestyle.</p>
+  <p>Good luck on your journey to better health!</p>
+</div>
               </ModalBody>
               <ModalFooter>
                 <div className="button-wrapper" style={{ paddingTop: 0 }}>
