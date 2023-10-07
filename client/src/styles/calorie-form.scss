@@ -217,6 +217,8 @@
     border: 1px solid white;
     border-radius: 5px;
     overflow: hidden;
+    height: 45%;
+    justify-content: space-evenly;
     .top-check {
       display: flex;
       justify-content: flex-end;
@@ -261,7 +263,6 @@
     }
   }
   img {
-    margin: 10% 20%;
     // margin-bottom: 0;
     width: 200px;
   }
