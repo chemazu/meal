@@ -218,7 +218,7 @@
     border-radius: 5px;
     overflow: hidden;
     height: 45%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     .top-check {
       display: flex;
       justify-content: flex-end;
@@ -354,7 +354,8 @@
     flex-direction: column;
     height: 80%;
     width: 80%;
-    padding: 5% 0;
+    padding-bottom: 15%;
+ 
     img {
       width: 120px;
     }
