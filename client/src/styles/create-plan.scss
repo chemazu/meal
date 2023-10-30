@@ -1,0 +1,177 @@
+.meal-plan {
+  padding: 3%;
+  height: 97dvh;
+  .back-plan {
+    padding: 1% 0;
+    visibility: hidden;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .visible {
+    visibility: visible;
+  }
+
+  .progress {
+    height: 0.5rem;
+  }
+  .meal-form {
+    padding: 3% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+
+    .meal-freq,
+    .diet,
+    .cheat-meal,
+    .prep-freq {
+      max-width: 45%;
+      width: 45%;
+      text-align: center;
+
+      h2 {
+        margin-bottom: 2rem;
+      }
+      ul {
+        list-style: none;
+        .selected-li {
+          border: 2px solid rgba(2, 72, 49, 0.494);
+        }
+        input {
+          margin: 10px;
+        }
+        li {
+          background-color: #fffaed;
+          border: 2px solid #fffaed;
+
+          padding: 0.75rem;
+          margin-bottom: 1rem;
+          border-radius: 5px;
+          display: flex;
+
+          align-items: center;
+        }
+        :hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .create-button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .choose-items {
+    .adjust {
+      padding-bottom: 15px;
+      border-bottom: 1px solid grey;
+    }
+    .choose-cadence {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .choose-cadence-wrapper {
+      padding: 1rem 0;
+      border-bottom: 1px solid grey;
+    }
+  }
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+.macro-type-parent {
+  h3 {
+    padding: 3% 0;
+  }
+}
+.macro-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  p {
+    padding: 2.5% 5%;
+    background: yellow;
+    border-radius: 5px;
+    background-color: #fffaed;
+    text-transform: capitalize;
+    margin-bottom: 5%;
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: "480px") {
+  .meal-plan .meal-form {
+    .meal-freq,
+    .prep-freq,
+    .cheat-meal,
+    .diet {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

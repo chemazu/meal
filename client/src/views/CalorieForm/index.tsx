@@ -9,14 +9,19 @@ import { PieChart, Pie, Cell } from "recharts";
 
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import calculateCalorieNeeds from "./calorieFormCalculator";
+import RegisterModal from "./RegisterModal";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { useNavigate } from 'react-router-dom';
 
 export default function Calorieform() {
+
   const alert = useAlert();
+  const navigate = useNavigate();
+
+
   const [currentItem, setCurrentItem] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-
-  const [calorieResult, setCalorieResult] = useState<any>();
-  const [goalDisplay, setGoalDisplay] = useState();
+  const [registerControl, setRegisterControl] = useState<boolean>(false);
   const [errorHolder, setErrorHolder] = useState<any>([]);
   const [calorieFormData, setCalorieFormData] = useState([
     { title: "Age", value: "" },
@@ -26,6 +31,14 @@ export default function Calorieform() {
     { title: "Activity", value: "" },
     { title: "Goal", value: "" },
   ]);
+  const createPlan = () => {
+    navigate('/create-plan')
+  };
+  const saveMacros = () => {
+    setIsOpen(false);
+    setRegisterControl(true);
+  };
+
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -95,7 +108,7 @@ export default function Calorieform() {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const errors = [];
- 
+
     for (let i = 0; i < calorieFormData.length; i++) {
       if (calorieFormData[i].value === "") {
         errors.push(i); // Push the position of the error into the errors array
@@ -108,8 +121,8 @@ export default function Calorieform() {
       console.log(Math.min(...errors));
       let a = Math.min(...errors);
       setCurrentItem(a + 1);
-      console.log(errors)
- console.log(calorieFormData)
+      console.log(errors);
+      console.log(calorieFormData);
       // Update the errorHolder state with the positions of the errors
     } else {
       // setErrorHolder([]);
@@ -177,7 +190,9 @@ export default function Calorieform() {
                   display: index === currentItem - 1 ? "flex" : "none",
                 }}
               >
-                {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
+                {errorHolder.includes(index) && (
+                  <p className="incomplete-field">Please complete</p>
+                )}
 
                 <div
                   className={`male ${
@@ -237,7 +252,9 @@ export default function Calorieform() {
                   className="slide-up form-item"
                 >
                   <div className="form-item-title">
-                    {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
+                    {errorHolder.includes(index) && (
+                      <p className="incomplete-field">Please complete</p>
+                    )}
 
                     <span>
                       {" "}
@@ -293,7 +310,9 @@ export default function Calorieform() {
                   <div className="form-item-title">
                     <span>
                       {" "}
-                      {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
+                      {errorHolder.includes(index) && (
+                        <p className="incomplete-field">Please complete</p>
+                      )}
                       {index + 1} * {item.title}
                     </span>
                   </div>
@@ -330,7 +349,9 @@ export default function Calorieform() {
                   }}
                   className="slide-up form-item"
                 >
-                  {errorHolder.includes(index) && <p className="incomplete-field">Please complete</p>}
+                  {errorHolder.includes(index) && (
+                    <p className="incomplete-field">Please complete</p>
+                  )}
 
                   <div className="form-item-title">
                     <span>
@@ -358,12 +379,20 @@ export default function Calorieform() {
           })}
         {currentItem > calorieFormData.length && (
           <div style={{ display: "block" }}>
+            <RegisterModal
+              registerControl={registerControl}
+              setRegisterControl={setRegisterControl}
+            />
             <Modal isOpen={isOpen}>
-              <ModalHeader onClick={()=>{
-                setIsOpen(false)
-              }}>Close</ModalHeader>
+              <ModalHeader
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                Close
+              </ModalHeader>
               <ModalBody>
-                Congratulations on taking the first step towards a healthier
+                Congratulations on taking the first step towards a healthier you
                 <div className="middle-div">
                   <div className="pie-chart-wrapper">
                     <PieChart width={250} height={250}>
@@ -448,16 +477,31 @@ export default function Calorieform() {
                     </div>
                   </div>
                 </div>
-                <div className="bottom-div">
+                {/* <div className="bottom-div">
   <p>Consume a variety of colorful fruits and vegetables for essential nutrients.</p>
   <p>Aim for at least 30 minutes of daily exercise for a healthy lifestyle.</p>
   <p>Good luck on your journey to better health!</p>
-</div>
+</div> */}
               </ModalBody>
               <ModalFooter>
-                <div className="button-wrapper footer-button-wrapper" style={{ paddingTop: 0 }}>
-                  <button>Save</button>
-                  <button>Create Meal Plan</button>
+                <div
+                  className="button-wrapper footer-button-wrapper"
+                  style={{ paddingTop: 0 }}
+                >
+                  <button
+                    onClick={() => {
+                      saveMacros();
+                    }}
+                  >
+                    Save
+                  </button>
+                  <button
+                    onClick={() => {
+                      createPlan();
+                    }}
+                  >
+                    Create Meal Plan
+                  </button>
                 </div>
               </ModalFooter>
             </Modal>
