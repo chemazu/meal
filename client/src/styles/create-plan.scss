@@ -147,22 +147,46 @@
     padding: 3% 0;
   }
 }
+.inactive-parent{
+  opacity: 0.6;
+}
+
 .macro-type {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 90%;
+ 
   p {
     padding: 2.5% 5%;
-    background: yellow;
-    border-radius: 5px;
+ border: 2px solid #fffaed;
+    border-radius: 10px;
     background-color: #fffaed;
     text-transform: capitalize;
     margin-bottom: 5%;
-    :hover {
+    &:hover {
       cursor: pointer;
     }
   }
+  .selected-macro{
+    border: 2px solid rgba(2, 72, 49, 0.494);
+  }
+
+}
+.inactive{
+ p {&:hover{
+    cursor: not-allowed;
+  }}
+  .selected-macro{
+    border: 2px solid #fffaed;
+  }
+}
+.creating-meal-plan{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 @media screen and (max-width: "480px") {
   .meal-plan .meal-form {

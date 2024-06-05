@@ -8,7 +8,7 @@ import userRoute from "./routes/auth";
 import mongoose from "mongoose";
 const app = express();
 const port = 8000;
-config()
+config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,9 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1/user", userRoute);
 
 mongoose.set("strictQuery", false);
-mongoose.connect(
-  "mongodb+srv://chemazu:Ratface_3@chemazu.juxhwwr.mongodb.net/meal"
-);
+mongoose.connect(process.env.MONGO_URI);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));

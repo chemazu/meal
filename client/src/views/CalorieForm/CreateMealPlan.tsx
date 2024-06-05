@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Progress } from "reactstrap";
+import MealPlan from "../../component/MealPlan";
 
 type Props = {};
 
@@ -10,15 +11,15 @@ type MealPrepTime =
   | "I prefer to order meals or go out to eat";
 
 export default function CreateMealPlan({}: Props) {
-  const [currentItem, setCurrentItem] = useState(1);
+  const [currentItem, setCurrentItem] = useState(6);
   const [mealFreq, setMealFreq] = useState<number | null>(null);
   const [selectedDiets, setSelectedDiets] = useState<string>("");
   const [cheatMealFrequency, setCheatMealFrequency] = useState<string>("");
   const [mealPrepTime, setMealPrepTime] = useState<string>("");
-  const [proteinHolder, setProteinHolder] = useState<string>("");
-  const [carbHolder, setCarbHolder] = useState<string>("");
-  const [fatHolder, setFatHolder] = useState<string>("");
-
+  const [proteinHolder, setProteinHolder] = useState<any[]>([]);
+  const [carbHolder, setCarbHolder] = useState<any[]>([]);
+  const [fatHolder, setFatHolder] = useState<any[]>([]);
+  const [cadenceMacros, setCadenceMacros] = useState(false);
   const protein = ["beef", "fish", "goat", "eggs", "Turkey"];
   const carbs = ["rice", "potaotes", "yam", "plantains"];
   const fats = ["olive oil", "butter", "mayo", "oil"];
@@ -27,8 +28,20 @@ export default function CreateMealPlan({}: Props) {
     if (currentItem <= 6) {
       setCurrentItem(currentItem + 1);
     }
+    if (currentItem >= 5) {
+      console.log({
+        mealFreq,
+        selectedDiets,
+        cheatMealFrequency,
+        mealPrepTime,
+        proteinHolder,
+        fatHolder,
+        cadenceMacros,
+        carbHolder,
+      });
+    }
   };
-  const handleDeecreaseCurrentItem = () => {
+  const handleDecreaseCurrentItem = () => {
     if (currentItem > 1) {
       setCurrentItem(currentItem - 1);
     }
@@ -39,7 +52,7 @@ export default function CreateMealPlan({}: Props) {
       <Progress value={currentItem} max={7} />
       <div
         className={`back-plan ${currentItem > 1 && "visible"}`}
-        onClick={handleDeecreaseCurrentItem}
+        onClick={handleDecreaseCurrentItem}
       >
         <i className="fa fa-arrow-left" aria-hidden="true"></i>
       </div>
@@ -175,6 +188,21 @@ export default function CreateMealPlan({}: Props) {
                   }}
                 />
                 Keto
+              </li>
+              <li
+                className={`${selectedDiets === "none" ? "selected-li" : ""}`}
+                onClick={() => {
+                  setSelectedDiets("none");
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={selectedDiets === "none"}
+                  onChange={(e) => {
+                    setSelectedDiets("none");
+                  }}
+                />
+                None of the above
               </li>
             </ul>
             <div className="create-button-wrapper">
@@ -350,7 +378,16 @@ export default function CreateMealPlan({}: Props) {
                 <div className="choose-cadence">
                   <h4>Let Cadence choose</h4>
                   <label className="switch">
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setCadenceMacros(true);
+                        } else {
+                          setCadenceMacros(false);
+                        }
+                      }}
+                    />
                     <span className="slider round"></span>
                   </label>
                 </div>
@@ -360,14 +397,28 @@ export default function CreateMealPlan({}: Props) {
                 </p>
               </div>
             </div>
-            <div className="macro-type-parent">
+            <div
+              className={`macro-type-parent ${
+                cadenceMacros && "inactive-parent"
+              }`}
+            >
               <h3>Proteins</h3>
-              <div className="macro-type">
-                {protein.map((item) => {
+              <div className={`macro-type ${cadenceMacros && "inactive"}`}>
+                {protein.map((item, i) => {
                   return (
                     <p
+                      key={i}
+                      className={`${
+                        proteinHolder.includes(item) && "selected-macro"
+                      }`}
                       onClick={() => {
-                        setProteinHolder(item);
+                        setProteinHolder((prev) => {
+                          if (prev.includes(item)) {
+                            return prev.filter((x) => x !== item); // Remove the item if it exists
+                          } else {
+                            return [...prev, item]; // Add the item if it doesn't exist
+                          }
+                        });
                       }}
                     >
                       {item}
@@ -376,14 +427,28 @@ export default function CreateMealPlan({}: Props) {
                 })}
               </div>
             </div>
-            <div className="macro-type-parent">
+            <div
+              className={`macro-type-parent ${
+                cadenceMacros && "inactive-parent"
+              }`}
+            >
               <h3>Carbohydrates</h3>
-              <div className="macro-type">
-                {carbs.map((item) => {
+              <div className={`macro-type ${cadenceMacros && "inactive"}`}>
+                {carbs.map((item, i) => {
                   return (
                     <p
+                      key={i}
+                      className={`${
+                        carbHolder.includes(item) && "selected-macro"
+                      }`}
                       onClick={() => {
-                        setCarbHolder(item);
+                        setCarbHolder((prev) => {
+                          if (prev.includes(item)) {
+                            return prev.filter((x) => x !== item); // Remove the item if it exists
+                          } else {
+                            return [...prev, item]; // Add the item if it doesn't exist
+                          }
+                        });
                       }}
                     >
                       {item}
@@ -392,15 +457,29 @@ export default function CreateMealPlan({}: Props) {
                 })}
               </div>
             </div>
-            <div className="macro-type-parent">
+            <div
+              className={`macro-type-parent ${
+                cadenceMacros && "inactive-parent"
+              }`}
+            >
               <h3>Fats</h3>
-              <div className="macro-type">
-                {fats.map((item) => {
+              <div className={`macro-type ${cadenceMacros && "inactive"}`}>
+                {fats.map((item, i) => {
                   return (
                     <p
+                      key={i}
                       onClick={() => {
-                        setFatHolder(item);
+                        setFatHolder((prev) => {
+                          if (prev.includes(item)) {
+                            return prev.filter((x) => x !== item); // Remove the item if it exists
+                          } else {
+                            return [...prev, item]; // Add the item if it doesn't exist
+                          }
+                        });
                       }}
+                      className={`${
+                        fatHolder.includes(item) && "selected-macro"
+                      }`}
                     >
                       {item}
                     </p>
@@ -419,10 +498,14 @@ export default function CreateMealPlan({}: Props) {
             </div>
           </div>
         )}
-        {currentItem === 6 && <div>Creating Meal Plan</div>}
+        {currentItem === 6 && (
+          <div className="creating-meal-plan">
+            Creating Meal Plan
+            <MealPlan />
+          </div>
+        )}
         {currentItem === 7 && <div>Get my plan</div>}
-
-        <p>Tips for meal prep that slowly fade btw</p>
+        {currentItem < 5 && <p>Tips for meal prep that slowly fade btw</p>}
       </div>
     </div>
   );

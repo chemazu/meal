@@ -1,8 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
 import axios from "axios";
 import "./App.scss";
-import Form from "./component/Form";
 import Home from "./views/Home/Home";
 import Recipe from "./views/Recipe";
 import { Route, Routes } from "react-router-dom";
@@ -12,7 +10,6 @@ import Register from "./views/Register/Index";
 import Login from "./views/Login/Index";
 import ForgotPassword from "./views/Login/ForgotPassword";
 import Dashboard from "./views/Dashboard";
-import ProtectedRoute from "./component/ProtectedRoute";
 import MealTracker from "./views/Dashboard/MealTracker";
 import HomeCopy from "./views/Home/Home copy";
 import CreateMealPlan from "./views/CalorieForm/CreateMealPlan";
@@ -25,23 +22,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/1" element={<HomeCopy />} />
-
         <Route path="/meal/:id" element={<Meal />} />
         <Route path="/recipe/:id" element={<Recipe />} />
         <Route path="/getstarted" element={<CalorieForm />} />
         <Route path="/create-plan" element={<CreateMealPlan />} />
-
         <Route path="/signup" element={<Register />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/mealtracker" element={<MealTracker />} />
-
-
-
-
-        {/* <Route path="/">{<Home />} </Route>
-        <Route path="/meal/:id">{<Meal />}</Route> */}
+        <Route path="/*" element={<p>Only Pop</p>} />
       </Routes>
     </div>
   );

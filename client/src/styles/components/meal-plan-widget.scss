@@ -1,0 +1,70 @@
+.meal-plan-item {
+  display: grid;
+  align-items: center;
+  padding: 15px 25px;
+  padding-left: 10px;
+  min-width: 35dvw;
+  // width: 60%;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 15px 0;
+  border-radius: 12px;
+  grid-template-columns: 1fr 3fr;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    justify-self: center;
+  }
+  .meal-text {
+    padding-left: 10px;
+    .meal-title {
+      display: flex;
+      justify-content: space-between;
+    }
+    h6 {
+      background-color: #aec6cf;
+      width: fit-content;
+      padding: 2% 4%;
+      margin: 2% 0%;
+
+      border-radius: 55px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    h6 {
+      font-size: 12px;
+    }
+    .macro-display {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+      .unit {
+        color: #7a7878;
+        margin-left: -0.2rem;
+      }
+    }
+  }
+}
+.meal-plan-widget {
+  width: fit-content;
+  background-color: #fffaed;
+  padding: 3%;
+  .day-title {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .meal-plan-item {
+    min-width: 60dvw;
+  }
+  .meal-plan-item .meal-text .macro-display {
+    width: 95%;
+  }
+}
+
